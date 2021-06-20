@@ -1,0 +1,67 @@
+<ion-header>
+    <ion-toolbar  >
+        <ion-buttons slot="start" class="btnBack">
+            <ion-button  >
+                <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title> 
+   <div class="card">
+  <div class="header">
+    <div class="avatar" style="margin-left: 26%; margin-top: 40px;">
+      <img src="../../assets/avatar.png" alt="">
+    </div>
+  </div>
+  <div style="margin-left: 26%; "> Share Express</div>
+   <div style="margin-left: 30%; "><small> Made in India</small></div>
+</div>
+ <div>
+ </div>
+  </ion-title>
+    </ion-toolbar> 
+</ion-header>
+  <ion-content> 
+<ion-grid>
+  <ion-row>
+   <ion-col>
+ <ion-list style="padding-top:20px;">
+            <ion-item *ngIf="ErrorMessage">
+                <label  style="padding-left: 20px;color:red;">{{ErrorMessage}}</label>   
+            </ion-item>
+            <ion-item  [class]="NewUserClass"> 
+               <ion-icon name="person"></ion-icon> 
+                <ion-input type="string" step="any"  [(ngModel)]="Name"   placeHolder="Name"></ion-input>
+            </ion-item> 
+            <ion-item> 
+              <ion-icon name="call-sharp"></ion-icon>
+                <ion-input type="string" step="any"  [(ngModel)]="Mobile"   placeHolder="Mobile"></ion-input> 
+            </ion-item>
+              
+             <ion-item> 
+            <ion-icon name="key"></ion-icon>
+                <ion-input type="string" step="any"  [(ngModel)]="Password"  type="password" placeHolder="Password"></ion-input>
+            </ion-item>
+        </ion-list>
+     <ion-button shape="round" expand="full"   color="success" [class]="ExistingUserClass"
+      (click)="LoginExist()">Login</ion-button> 
+      <ion-button shape="round" expand="full"   color="success"  [class]="NewUserClass" (click)="CreateUser()">Regster</ion-button> 
+   </ion-col>
+  </ion-row>
+    <ion-row>
+
+      <ion-col align-self-center>
+        
+
+        <span class="divider line one-line" >or</span>
+
+        <a   (click)="NewUser()" [class]="ExistingUserClass"  >New user?</a>
+        <a  (click)="SignIn()" [class]="NewUserClass" > Sign In</a>
+        
+  
+      
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+    
+    </ion-content>

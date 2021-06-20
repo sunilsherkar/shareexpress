@@ -1,0 +1,176 @@
+
+input.native-input.sc-ion-input-md {
+    padding-left: 20px !important;
+}
+
+ion-input {
+    padding-left: 20px !important;
+}
+
+
+
+ion-icon {
+    color: lightgray;
+}
+
+ion-labelHeader {
+    padding-left: 20px !important;
+    font-size: 15px !important;
+    font-weight: 200 !important;
+    color: darkgray;
+}
+
+ion-toolbar {
+    height: 257px !important;
+    --background: #125454;
+    color: white;
+}
+
+.btnBack {
+    margin-top: -37px !important;
+}
+
+.btnok {
+    margin-top: 98px !important;
+}
+
+.fabbtn {
+    margin-top: 78px;
+    background-color: transparent;
+}
+
+.button-native {
+    background-color: white !important;
+}
+
+ 
+ion-title {
+    padding-top: 20px;
+    font-size: 15px;
+}
+
+ 
+
+.headerInput {
+    font-size: 24px;
+    padding-top: 8px !important;
+    padding-left: 11px !important;
+}
+
+ 
+
+
+
+
+ ion-content {
+  
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+ 
+ .button-native
+ {
+    background: green;
+ }
+
+.card {
+    margin: 0 auto;
+
+    .header {
+        height: 100px;
+
+        .avatar {
+            width: 90px;
+            height: 13px;
+            position: relative;
+            margin: 0 auto;
+
+            img {
+                display: block;
+                border-radius: 50%;
+                position: absolute;
+                bottom: calc(-1*(80px + 4px));
+               
+                background-color: transparent;
+            }
+        }
+    }
+  }
+  .card-body {
+    background-color: #ffffff;
+    padding: 30px;
+    height: calc(100vh - (200px + 56px));
+    overflow: hidden;
+
+    .user-meta {
+        padding-top: 40px;
+
+        .playername {
+            font-size: 24px;
+            font-weight: 600;
+            color: #303940;
+        }
+
+        .country {
+            font-size: 90%;
+            color: #949ea6;
+            text-transform: uppercase;
+            margin: 0 auto;
+        }
+    }
+}
+ .Show {
+    display: block;
+}
+.Hide{
+    display: none;
+}
+
+
+
+
+.divider {
+    display: flex;
+    
+    &:before,
+    &:after {
+      content: "";
+      flex: 1;
+    }
+}
+  
+.line {
+    align-items: center;
+    margin: 1em -1em;
+    color: #cccccc;
+    
+    &:before,
+    &:after {
+      height: 1px;
+      margin: 0 1em;
+    }
+} 
+
+.one-line {
+    &:before,
+    &:after {
+       background: #cccccc;
+    }
+}
+
+.auth-form ion-grid,
+.auth-form ion-row {
+    height: 100%;
+    justify-content: center;
+}
+
+a{
+    display: block;
+    text-align: center;
+    padding-bottom: 10px;
+    color: #125454;
+}
+
+ 
+ 

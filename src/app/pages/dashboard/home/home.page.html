@@ -1,0 +1,143 @@
+
+
+<ion-content>
+    <div class="page">
+        <div class="marvel-device nexus5">
+            <div class="top-bar"></div>
+            <div class="sleep"></div>
+            <div class="volume"></div>
+            <div class="camera"></div>
+            <div class="screen">
+                <div class="screen-container">
+                    <div class="status-bar">
+                        <div class="time"></div>
+                        <div class="battery">
+                            <i class="zmdi zmdi-battery"></i>
+                        </div>
+                        <div class="network">
+                            <i class="zmdi zmdi-network"></i>
+                        </div>
+                        <div class="wifi">
+                            <i class="zmdi zmdi-wifi-alt-2"></i>
+                        </div>
+                        <div class="star">
+                            <i class="zmdi zmdi-star"></i>
+                        </div>
+                    </div>
+                    <div class="chat">
+                        <div class="chat-container">
+                            <div class="user-bar">
+                                <div class="">
+                                    
+
+                                </div>
+                                <div class="avatar">
+                                    <!--  <img src="" alt="Avatar"> -->
+                                </div>
+                                <div class="name">
+                                    <span>My Post</span>
+                                    <!--<span class="status">online</span>-->
+                                </div>
+                                <div class="actions more">
+                                  <!--   <ion-icon name="close" (click)="close()"></ion-icon> -->
+                                </div>
+                                <div class="actions attachment">
+                                    <i class="zmdi zmdi-attachment-alt"></i>
+                                </div>
+                                <div class="actions">
+                                    <i class="zmdi zmdi-phone"></i>
+                                </div>
+                            </div>
+                            <div class="conversation">
+                                <div class="conversation-container">
+
+                                    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+                                        <ion-refresher-content></ion-refresher-content>
+                                    </ion-refresher>
+
+                                    <ion-card *ngFor="let f of MyFiles">
+                                        <ion-item>
+                                            <ion-avatar item-start>
+                                                <img src="{{f.UploadUserProfilePath}}" />
+                                            </ion-avatar>
+                                            <span style="margin-left: 10px"> {{f.UploadUserName}}  </span>
+                                        </ion-item>
+                                        <ion-card-content>
+                                            <p>Life.</p>
+                                            <div class="container">
+                                                <img *ngIf="f.Extension == 'jpg' || f.Extension == 'jpeg'|| f.Extension == 'png'"
+                                                     src="{{f.FilePath}}" (click)="ShowVideos(f,MyFiles)" />
+                                                <img *ngIf="f.Extension != 'jpg' && f.Extension != 'jpeg'&& f.Extension != 'png' " src="{{f.ThumbPath}}"
+                                                     class="img-responsive" (click)="ShowVideos(f,MyFiles)" />
+                                                <div class="overlay1" *ngIf="f.Extension != 'jpg' && f.Extension != 'jpeg'&& f.Extension != 'png' ">
+                                                    <ion-icon class="icon" name="play-circle-outline" (click)="ShowVideos(f,MyFiles)"></ion-icon>
+                                                </div>
+                                            </div>
+                                        </ion-card-content>
+                                        <ion-row>
+                                            <ion-col>
+                                                <ion-tab-button>
+                                                    <ion-spinner name="crescent" color="success" *ngIf="f.isShareStart">
+                                                    </ion-spinner>
+                                                    <ion-icon class="share-icon" name="logo-whatsapp" *ngIf="!f.isShareStart"
+                                                              [ngClass]="{'green': f.isShare == true}">
+                                                    </ion-icon>
+                                                    <small>{{f.TotalShare}} share</small>
+                                                </ion-tab-button>
+                                            </ion-col>
+                                            <ion-col>
+                                                <ion-tab-button>
+                                                    <ion-icon name="happy-outline"></ion-icon>
+                                                    <small> {{f.TotalLikes}} likes </small>
+                                                </ion-tab-button>
+                                            </ion-col>
+                                            <ion-col>
+                                                <ion-tab-button>
+                                                    <ion-icon name="document-text-outline" (click)="CommentLoad(f)"></ion-icon> <small>   Comments </small>
+                                                </ion-tab-button>
+                                            </ion-col>
+                                            <ion-col>
+                                                <ion-tab-button>
+                                                    <ion-spinner name="crescent" color="success" *ngIf="f.isDownloadStart">
+                                                    </ion-spinner>
+                                                    <ion-icon name="cloud-download-outline"></ion-icon>
+                                                    <small> {{f.TotalDownload}} save </small>
+                                                </ion-tab-button>
+                                            </ion-col>
+                                        </ion-row>
+                                    </ion-card>
+
+                                </div>
+                                <!--<form class="conversation-compose">
+
+                                </form>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-content>
+<ion-footer>
+
+    <ion-toolbar>
+        <ion-tab-button slot="start" (click)="RedirectDashboard()">
+            <ion-icon name="home"></ion-icon>
+            <ion-label>Home</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button>
+            <ion-icon name="cloud-upload-outline"></ion-icon>
+            <input id="uploadBtn" type="file" class="upload"
+                   (change)="uploadOnServer($event.target.files)" />
+            Upload
+        </ion-tab-button>
+
+        <ion-tab-button tab="about" (click)="RedirectProfile()" slot="end">
+            <ion-icon name="person"></ion-icon>
+            <ion-label>Setting</ion-label>
+        </ion-tab-button>
+    </ion-toolbar>
+</ion-footer>
+

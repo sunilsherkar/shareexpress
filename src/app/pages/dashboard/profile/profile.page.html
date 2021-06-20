@@ -1,0 +1,194 @@
+<!--
+<ion-header >
+    <ion-toolbar color="primary" [myScrollVanish]="scrollArea">
+      <div class="overlay1" >
+    <ion-buttons slot="start">
+      <ion-button routerLink="/dashboard">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </div>
+
+
+   <div class="overlay2" >
+   <ion-buttons slot="end" (click)="logout()" >
+      <ion-button  >
+     <ion-icon name="settings-outline" slot="end" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+</div>
+<div class="container" >
+
+ <div class="card">
+  <div class="header">
+
+    <div class="" style="margin-left: 0%; margin-top: 1px;text-align: center;">
+      <img src="{{ThumbPath}}" alt="loading image...">
+    </div>
+
+  </div>
+</div>
+<div class="overlay3" >
+   <ion-icon  name="camera" (click)="toBaseImg()" class="icon"></ion-icon>
+
+  </div>
+  </div>
+
+    </ion-toolbar>
+</ion-header>
+   <ion-content   #scrollArea scrollEvents="true" >
+
+ <ion-card    >
+  <ion-item >
+    <span style="margin-left: 10px" >   {{FullName}}   </span>
+  </ion-item>
+
+  <ion-item >
+    <span style="margin-left: 10px" >  Post :  {{TotalPost}}  </span>
+  </ion-item>
+  <ion-item >
+    <span style="margin-left: 10px" > Likes :  {{TotalLikes}} </span>
+  </ion-item>
+  <ion-item >
+    <span style="margin-left: 10px" > Shares :  {{TotalShare}}  </span>
+  </ion-item>
+   <ion-item >
+    <span style="margin-left: 10px" > Download :  {{TotalDownload}}   </span>
+  </ion-item>
+
+  <ion-row>
+    </ion-row>
+</ion-card>
+
+
+</ion-content>
+
+
+  <ion-footer  >
+ <ion-toolbar>
+ <ion-tab-button tab="about" slot="start" (click)="RedirectDashboard()">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+     <ion-tab-button tab="about"  (click)="RedirectCapture()" >
+      <ion-icon name="camera"></ion-icon>
+      <ion-label>Capture</ion-label>
+    </ion-tab-button>
+  <ion-tab-button tab="about"   slot="end">
+      <ion-icon name="person"></ion-icon>
+      <ion-label>Setting</ion-label>
+    </ion-tab-button>
+      </ion-toolbar>
+  </ion-footer>  -->
+
+
+<ion-content>
+    <div class="page">
+        <div class="marvel-device nexus5">
+            <div class="top-bar"></div>
+            <div class="sleep"></div>
+            <div class="volume"></div>
+            <div class="camera"></div>
+            <div class="screen">
+                <div class="screen-container">
+                    <div class="status-bar">
+                        <div class="time"></div>
+                        <div class="battery">
+                            <i class="zmdi zmdi-battery"></i>
+                        </div>
+                        <div class="network">
+                            <i class="zmdi zmdi-network"></i>
+                        </div>
+                        <div class="wifi">
+                            <i class="zmdi zmdi-wifi-alt-2"></i>
+                        </div>
+                        <div class="star">
+                            <i class="zmdi zmdi-star"></i>
+                        </div>
+                    </div>
+                    <div class="chat">
+                        <div class="chat-container">
+                            <div class="user-bar">
+                                <div class="back" routerLink="/dashboard">
+                                    <ion-icon name="arrow-back-outline"  ></ion-icon>
+
+                                </div>
+                                <div class="avatar">
+                                    <!--  <img src="" alt="Avatar"> -->
+                                </div>
+                                <div class="name">
+                                    <span>My Profile</span>
+                                    <!--<span class="status">online</span>-->
+                                </div>
+                                <div class="actions more">
+                                   <!--  <ion-icon name="settings-outline" (click)="logout()" slot="end"></ion-icon> -->
+                                </div>
+                                <div class="actions attachment">
+                                   <ion-icon name="home" (click)="emoji()" slot="end">e</ion-icon>
+                                     
+                                </div>
+                                <div class="actions">
+                                    <i class="zmdi zmdi-phone"></i>
+                                </div>
+                            </div>
+                            <div class="conversation">
+                                <div class="conversation-container">
+                                    <div class="container">
+                                        <div class="card">
+                                            <div class="header">
+                                                <div class="" style="margin-left: 0%; margin-top: 1px;text-align: center;">
+                                                    <img src="{{ThumbPath}}" alt="loading image...">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="overlay3">
+                                            <ion-icon name="camera" (click)="toBaseImg()" class="icon"></ion-icon>
+                                        </div>
+                                    </div>
+                                    <ion-card >
+                                        <ion-item>
+                                            <span style="margin-left: 10px">   {{FullName}}   </span>
+                                        </ion-item>
+
+                                        <ion-item>
+                                            <span style="margin-left: 10px">  Post :  {{TotalPost}}  </span>
+                                        </ion-item>
+                                        <ion-item>
+                                            <span style="margin-left: 10px"> Likes :  {{TotalLikes}} </span>
+                                        </ion-item>
+                                        <ion-item>
+                                            <span style="margin-left: 10px"> Shares :  {{TotalShare}}  </span>
+                                        </ion-item>
+                                        <ion-item>
+                                            <span style="margin-left: 10px"> Download :  {{TotalDownload}}   </span>
+                                        </ion-item>
+
+                                        <ion-row>
+                                        </ion-row>
+                                    </ion-card>
+
+                                </div> 
+                                   </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-content>
+<ion-footer>
+    <ion-toolbar>
+        <ion-tab-button tab="about" slot="start" (click)="RedirectDashboard()">
+            <ion-icon name="home"></ion-icon>
+            <ion-label>Home</ion-label>
+        </ion-tab-button>
+        <ion-tab-button tab="about" (click)="RedirectCapture()">
+            <ion-icon name="camera"></ion-icon>
+            <ion-label>Capture</ion-label>
+        </ion-tab-button>
+        <ion-tab-button tab="about" slot="end">
+            <ion-icon name="person"></ion-icon>
+            <ion-label>Setting</ion-label>
+        </ion-tab-button>
+    </ion-toolbar>
+</ion-footer> 

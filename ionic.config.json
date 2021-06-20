@@ -1,0 +1,22 @@
+{
+  "name": "ShareExpress",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular" ,
+
+  "proxies": [
+   {
+     "path": "/v0",
+      "proxyUrl": "https://firebasestorage.googleapis.com/v0" 
+   },
+   {
+     "path": "/api",
+     "proxyUrl": "http://sherkarsunil2-001-site1.atempurl.com/api"
+   } 
+   ],
+  "HTTP_PROXY": "https://firebasestorage.googleapis.com/v0",
+  "IONIC_HTTP_PROXY": "https://firebasestorage.googleapis.com/v0"
+}
+

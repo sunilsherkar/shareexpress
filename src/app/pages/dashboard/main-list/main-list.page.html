@@ -1,0 +1,39 @@
+
+ 
+<ion-content    >
+  
+<div class="mainContent" >  
+   <div class= "overlay-visible top-overlay-visible" id="topOverlay"  >
+    <div class="topOverlayElements"> 
+    </div> 
+</div>
+ 
+  <div class="back" (click)="close()" > 
+  <ion-icon name="arrow-back-outline"></ion-icon> 
+</div> 
+ <div class="heart" (click)="like1(false,true,false)" > 
+ <ion-icon name="happy-outline" [ngClass]="{'green': isLike == true}" ></ion-icon>  
+</div> 
+    <div class="closeVideo">
+   <ion-icon slot="icon-only" name="close-outline" (click)="close()"></ion-icon> 
+    </div>  
+      <div class="download primary" (click)="download1()">
+          <ion-spinner name="crescent" color="success"  *ngIf="isDownloadStart">  
+          </ion-spinner>
+            <ion-icon  name="cloud-download-outline" *ngIf="!isDownloadStart" 
+             [ngClass]="{'green': isDownload == true}"    ></ion-icon>  
+    </div>   
+      <div class="share">  
+         <ion-spinner name="crescent" color="success"  *ngIf="isShareStart">  
+          </ion-spinner>
+     <ion-icon name="logo-whatsapp" *ngIf="!isShareStart" 
+             [ngClass]="{'green': isShare == true}" (click)="whatsappShare1()"></ion-icon>  
+    </div>
+     <video class="mainContent"   #myvideo1  poster="assets/load.gif" controls="controls" preload="auto" webkit-playsinline="webkit-playsinline">
+     <span class= "overlay-visible top-overlay-visible">Top Overlay Text or Buttons
+     </span> 
+    <source id='mp4Source'/> 
+  </video>
+  </div>
+ 
+</ion-content>

@@ -1,0 +1,114 @@
+ 
+<ion-content>
+        <div class="page">
+  <div class="marvel-device nexus5">
+    <div class="top-bar"></div>
+    <div class="sleep"></div>
+    <div class="volume"></div>
+    <div class="camera"></div>
+    <div class="screen">
+      <div class="screen-container">
+        <div class="status-bar">
+          <div class="time"></div>
+          <div class="battery">
+            <i class="zmdi zmdi-battery"></i>
+          </div>
+          <div class="network">
+            <i class="zmdi zmdi-network"></i>
+          </div>
+          <div class="wifi">
+            <i class="zmdi zmdi-wifi-alt-2"></i>
+          </div>
+          <div class="star">
+            <i class="zmdi zmdi-star"></i>
+          </div>
+        </div>
+        <div class="chat">
+          <div class="chat-container">
+            <div class="user-bar">
+                <div class="back">
+                    <ion-icon name="arrow-back-outline"  (click)="close()"></ion-icon>
+                     
+                </div>
+              <div class="avatar">
+                 <ion-icon name="musical-notes" (click)="ApplyFilter(data)"></ion-icon>
+              
+               <!--  <img src="" alt="Avatar"> -->
+              </div>
+              <div class="name">
+                <span>Comment</span>
+                <!--<span class="status">online</span>-->
+              </div>
+              <div class="actions more">
+                  <ion-icon name="close"  (click)="close()"></ion-icon> 
+              </div>
+              <div class="actions attachment">
+                <i class="zmdi zmdi-attachment-alt"></i>
+              </div>
+              <div class="actions">
+                <i class="zmdi zmdi-phone"></i>
+              </div>
+            </div>
+            <div class="conversation">
+              <div class="conversation-container">
+
+
+  
+<ion-card> 
+   
+   
+  <ion-card-content> 
+  
+  <div class="container" >
+
+    <img *ngIf="data.Extension == 'jpg' || data.Extension == 'jpeg'||data.Extension == 'png'"
+  src="{{data.FilePath}}"  />  
+  <img  *ngIf="data.Extension != 'jpg' && data.Extension != 'jpeg'&& data.Extension != 'png' " 
+  src="{{data.ThumbPath}}"   /> 
+
+      
+  </div> 
+  <div>
+   
+ 
+  </div>
+  <div>
+     <video class="mainContent"   #myvideo1  poster="assets/load.gif" controls="controls" preload="auto" webkit-playsinline="webkit-playsinline">
+     <span class= "overlay-visible top-overlay-visible"> 
+     </span> 
+    <source id='mp4Source'/> 
+  </video>
+</div>
+  </ion-card-content> 
+</ion-card>
+  
+               </div>
+                <form class="conversation-compose">
+
+                
+                 
+                 
+                <button class="send">
+                    <div class="circle">
+                        <ion-icon name="send" (click)="CreateFilter()"></ion-icon>
+                           
+                         
+                    </div>
+                  </button>
+                   <button class="send">
+                    <div class="circle">
+                         
+                          <ion-icon    class="icon" name="play-circle-outline" (click)="playVideo()"></ion-icon>
+                         
+                    </div>
+                  </button>
+              </form>
+       
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</ion-content>
